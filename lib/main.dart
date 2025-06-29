@@ -1,5 +1,6 @@
 // import 'package:first_app/expensetracker/widgets/expenses.dart';
-import 'package:first_app/mealsApp/screens/tabs.dart';
+// import 'package:first_app/mealsApp/screens/tabs.dart';
+import 'package:first_app/shoppingList/widgets/grocery_list.dart';
 // import 'package:first_app/quizapp/quiz.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,13 +71,35 @@ final theme= ThemeData(
     textTheme:GoogleFonts.latoTextTheme()
 );
 
+//meals app
+// class MyApp extends StatelessWidget{
+//   const MyApp({super.key});
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       theme: theme,
+//       home: TabScreen(), // meals app
+//     );
+//   }
+// }
+
+
+// shopping List  -  input form and validation
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      theme: theme,
-      home: TabScreen(),
+       theme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 147, 229, 250),
+          brightness: Brightness.dark,
+          surface: const Color.fromARGB(255, 42, 51, 59),
+        ),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
+      ),
+      home:GroceryList()
     );
   }
 }
